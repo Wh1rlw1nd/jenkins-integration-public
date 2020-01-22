@@ -16,6 +16,8 @@
 default_platform(:ios)
 
 lane :beta do
+ enable_automatic_code_signing
+  increment_build_number
   gym
   # Use pilot to upload your app to testflight
   pilot(distribute_external: false)
